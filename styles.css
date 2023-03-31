@@ -1,0 +1,511 @@
+@import url("https://fonts.googleapis.com/css2?family=Alkatra&display=swap");
+
+@font-face {
+  font-family: "a_another_tag";
+  src: url("assets/fonts/a-another-tag/aanothertag-webfont.woff2") format("woff2"),
+       url("assets/fonts/a-another-tag/aanothertag-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "a_dripping_markerregular";
+  src: url("assets/fonts/a-dripping-marker/adrip1-webfont.woff2") format("woff2"),
+       url("assets/fonts/a-dripping-marker/adrip1-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "fightbackregular";
+  src: url("assets/fonts/fightback/fightback-webfont.woff2") format("woff2"),
+       url("assets/fonts/fightback/fightback-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "fight_hard_demoregular";
+  src: url("assets/fonts/fight-hard/fightharddemoregular-webfont.woff2") format("woff2"),
+       url("assets/fonts/fight-hard/fightharddemoregular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "amnestyscript";
+  src: url("assets/fonts/amnesty/amnesty-script-webfont.woff2") format("woff2"),
+       url("assets/fonts/amnesty/amnesty-script-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --slide-transform: 0;
+  --transition: transform 1s;
+  --color-title-text: white;
+  --color-primary-web: rgb(205, 22, 205);
+  --color-secundary-web: rgb(191, 27, 191);
+  --color-background-primary: rgb(20, 20, 20);
+  --color-background-secondary: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-background-primary);
+  width: 100%;
+  height: 100vh;
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-title-text);
+}
+
+.navbar {
+  width: 100%;
+  height: 10vh;
+  padding: 10px 15px 0 15px;
+  display: flex;
+  padding-bottom: 70px;
+}
+
+.logo {
+  font-family: "a_another_tag", sans-serif;
+  font-size: 3.5rem;
+  width: 40%;
+  height: 70px;
+  letter-spacing: 3px;
+  top: 20px;
+  left: 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.links {
+  width: 60%;
+  gap: 1.5em;
+  font-family: "Alkatra", sans-serif;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+.links a:hover {
+  color: var(--color-primary-web);
+}
+
+.toggle_btn {
+  font-size: 1.7rem;
+  padding-top: 15px;
+  cursor: pointer;
+  display: none;
+}
+
+.dropdown_menu {
+  position: absolute;
+  list-style: none;
+  right: 1rem;
+  top: 60px;
+  width: 150px;
+  height: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  display: none;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+  height: 135px;
+}
+
+.dropdown_menu li {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown_menu a:hover {
+  color: var(--color-primary-web);
+}
+
+.hero {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: 
+    linear-gradient( transparent, rgba(20, 20, 20, 1)),
+    url(assets/images/Fondo-Hero-2.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero_text{
+  text-align: center;
+}
+
+.hero_text h2{
+  font-family: "fightbackregular", sans-serif;
+  color: var(--color-title-text);
+  font-size: 8rem;
+}
+
+.hero_text h3{
+  font-family: "fight_hard_demoregular", sans-serif;
+  color: magenta;
+  font-size: 2.2rem;
+  letter-spacing: 3px;
+}
+
+.about_me p{
+  display: flex;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  font-family: "Alkatra", sans-serif;
+  font-size: 1.2em;
+  margin: 50px;
+  padding-top: 20px;
+}
+
+.row {
+  width: 100%;
+}
+
+.row_1 {
+  height: 6px;
+  background-color: var(--color-background-secondary);
+}
+
+.row_2 {
+  height: 5px;
+  background-color: var(--color-background-primary);
+}
+
+.row_3 {
+  height: 7px;
+  background-color: var(--color-background-secondary);
+}
+
+.row_4 {
+  height: 5px;
+  background-color: var(--color-background-primary);
+}
+
+.coaching {
+  background-color: var(--color-background-secondary);
+}
+
+.section_title {
+  color: var(--color-title-text);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-top: 15px;
+  font-family: "a_dripping_markerregular", sans-serif;
+  font-size: 3.5rem;
+}
+
+.coaching_container {
+  height: 450px;
+  width: 100%;
+  display: flex;
+}
+
+.coaching_list{
+  padding: 25px 0 0 30px;
+  color: var(--color-primary-web);
+  font-family: "Alkatra", sans-serif;
+  font-size: 1.5em;
+  font-style: italic;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coaching_right{
+  width: 50%;
+}
+
+.coaching_right h4{
+  color: var(--color-primary-web);
+  font-family: "amnestyscript", sans-serif;
+  font-size: 4em;
+  right: 50%;
+  transform: translate(0, -150%);
+  text-align: center;
+}
+
+.coaching_img {
+  height: 450px;
+  background: linear-gradient(transparent, rgb(0, 0, 0, 1)),
+              url(assets/images/fondo-coach.svg);
+  background-size: cover;
+  position: relative;
+}
+
+.reels_section {
+  width: 100%;
+  height: 750px;
+}
+
+.reels_container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 325px;
+  overflow: hidden;
+}
+
+.reel_slider {
+  display: flex;
+  transform: translateX(var(--slide-transform));
+  transition: var(--transition);
+}
+
+.reel_slider li{
+  list-style: none;
+}
+
+.reel_element {
+  min-width: 100%;
+}
+
+.reels_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-secundary-web);
+  gap: 2rem;
+  font-size: 1.5em;
+}
+
+.footer {
+  background-color: var(--color-secundary-web);
+}
+
+.contact_me_text {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: "fightbackregular", sans-serif;
+  color: white;
+  font-size: 2.7rem;
+  padding-top: 30px;
+}
+
+.contact_me_p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  color: white;
+  font-family: "Alkatra", sans-serif;
+  font-size: 1.4rem;
+}
+
+.social_media_icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.social_media_icons a{
+  width: 40px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  font-size: 1.3rem;
+}
+
+.social_media_icons a:hover {
+  scale: 1.5;
+}
+
+.author {
+  display: flex;
+  justify-content: center;
+  padding: 25px 0 15px 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.author a {
+  padding-top: 10px;
+  font-size: 1.2em;
+}
+
+.author a:hover {
+  scale: 1.3;
+}
+
+@media screen and (max-width: 900px){
+  .links {
+    display: none;
+  }
+
+  .toggle_btn {
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 20px;
+  }
+
+  .dropdown_menu {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 475px){
+  .dropdown_menu {
+    top: 70px;
+    left: 1rem;
+    width: unset;
+  }
+}
+
+@media screen and (max-width: 350px){
+  .logo {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 990px){
+  .coaching_list {
+    width: 30%;
+    font-size: 1.3em
+  }
+
+  .coaching_right {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 800px){
+  .coaching_right{
+    display: none;
+  }
+
+  .coaching_list {
+    width: 100%;
+    font-size: 1.7em;
+    padding: 0 0 20px 0;
+  }
+
+  .coaching_container {
+    height: 200px;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 540px){
+  .coaching_list {
+    width: 100%;
+    font-size: 1.2em;
+    padding-left: 20px;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 700px){
+  .logo {
+    font-size: 5rem;
+    padding-left: 2rem;
+  } 
+}
+
+@media screen and (min-width: 1900px){
+  .logo a{
+    font-size: 7.5rem;
+  }
+}
+
+@media screen and (min-width: 1150px){
+  .logo {
+    font-size: 4.2rem;
+  }
+}
+
+@media screen and (min-width: 1260px){
+  .links {
+    font-size: 1.2rem;
+    padding-top: 0.7em;
+  }
+}
+
+@media screen and (min-width: 1500px){
+  .links {
+    font-size: 1.8rem;
+    padding-top: 0;
+  }
+
+  .hero {
+    height: 700px;
+  }
+}
+
+@media screen and (min-width: 1400px){
+  .hero_text h2{
+    font-size: 14rem;
+  }
+
+  .hero_text h3{
+    font-size: 4rem;
+  }
+
+  .about_me p{
+    font-size: 2em;
+  }
+
+  .coaching {
+    height: 700px;
+  }
+
+  .coaching_list li{
+    font-size: 1.5em;
+  }
+  
+  .section_title {
+    font-size: 6rem;
+  }
+
+  .reels_section {
+    height: 800px;
+  }
+
+  .contact_me_text {
+    font-size: 4.3rem;
+  }
+
+  .contact_me_p {
+    font-size: 3rem;
+  }
+
+  .social_media_icons{
+    gap: 2em;
+  }
+
+  .social_media_icons a{
+    font-size: 2.7rem;
+    padding: 0;
+  }
+
+  .author p, .author a{
+    font-size: 1.2rem;
+  }
+}
